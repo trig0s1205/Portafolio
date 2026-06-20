@@ -1,19 +1,20 @@
+
+<script setup lang="ts">
+import PulseLine from './PulseLine.vue'
+</script>
+
+
 <template>
   <footer class="footer">
     <div class="container footer__inner">
       <PulseLine compact />
       <div class="footer__row">
         <span class="footer__id">TRG1205</span>
-        <span class="footer__note">Construido en silencio · {{ 2026 }}</span>
+        <span class="footer__note">Construido en silencio · 2026</span>
       </div>
     </div>
   </footer>
 </template>
-
-<script setup lang="ts">
-import PulseLine from './PulseLine.vue'
-const year = new Date().getFullYear()
-</script>
 
 <style scoped>
 .footer {
