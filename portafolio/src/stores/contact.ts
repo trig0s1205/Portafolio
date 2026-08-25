@@ -14,6 +14,15 @@ export const useContactStore = defineStore('contact', {
   }),
   actions: {
     async submit(payload: ContactPayload) {
+      const email = payload.email.trim()
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+      if (!emailPattern.test(email)) {
+        this.status = 'error'
+        this.errorMessage = 'Introduce un correo válido.'
+        return
+      }
+
       this.status = 'sending'
       this.errorMessage = null
       try {

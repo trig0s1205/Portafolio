@@ -22,8 +22,24 @@ npm install
 
 1. Crea una cuenta gratuita en [emailjs.com](https://www.emailjs.com/).
 2. En **Email Services**, conecta tu cuenta de Gmail → copia el **Service ID**.
-3. En **Email Templates**, crea una plantilla con las variables
-   `{{from_name}}`, `{{from_email}}` y `{{message}}` → copia el **Template ID**.
+3. En **Email Templates**, crea una plantilla con estas variables
+   (Subject puede ser `{{subject}}` o fijo):
+
+   - `{{from_name}}` — nombre del visitante
+   - `{{from_email}}` — correo del visitante
+   - `{{reply_to}}` — mismo correo (para responder con un clic)
+   - `{{message}}` — cuerpo del mensaje
+   - `{{subject}}` — asunto generado automáticamente
+
+   Ejemplo de cuerpo en la plantilla:
+
+   ```
+   De: {{from_name}} <{{from_email}}>
+
+   {{message}}
+   ```
+
+   En la plantilla, configura **To Email** con tu Gmail y activa **Reply-To** = `{{reply_to}}`.
 4. En **Account → General**, copia tu **Public Key**.
 5. Copia `.env.example` a `.env` y completa los 3 valores:
 
