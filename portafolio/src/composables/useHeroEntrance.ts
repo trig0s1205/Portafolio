@@ -92,16 +92,6 @@ export function useHeroEntrance(rootRef: { value: HTMLElement | null }) {
         },
         '-=0.25'
       )
-
-      tl.from(
-        '[data-hero="scroll"]',
-        {
-          opacity: 0,
-          y: 10,
-          duration: 0.5
-        },
-        '-=0.2'
-      )
     }, root)
   })
 

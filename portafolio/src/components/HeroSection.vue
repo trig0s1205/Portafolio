@@ -4,7 +4,7 @@
     <div class="hero__shine" aria-hidden="true" />
 
     <div class="container hero__inner">
-      <p class="eyebrow hero__eyebrow" data-hero="eyebrow">DESARROLLADOR FULL-STACK · EL SALVADOR</p>
+      <p class="eyebrow hero__eyebrow" data-hero="eyebrow">DESARROLLADOR FULL-STACK</p>
 
       <h1 class="hero__id" data-hero="title">
         TRG<span class="hero__id-accent">1205</span>
@@ -33,14 +33,13 @@
       </ul>
 
       <div class="hero__actions">
-        <a href="#log" class="hero__cta btn-shine" data-hero="cta">Ver proyectos</a>
-        <a href="#transmission" class="hero__cta hero__cta--ghost" data-hero="cta">Hablemos</a>
+        <a href="#log" class="hero__cta btn-shine" data-hero="cta">
+          <span class="hero__cta-label">Ver proyectos</span>
+        </a>
+        <a href="#transmission" class="hero__cta hero__cta--ghost" data-hero="cta">
+          <span class="hero__cta-label">Hablemos</span>
+        </a>
       </div>
-    </div>
-
-    <div class="hero__scroll" data-hero="scroll" aria-hidden="true">
-      <span class="eyebrow">SCROLL</span>
-      <span class="hero__scroll-line" />
     </div>
   </section>
 </template>
@@ -60,8 +59,8 @@ useHeroEntrance(heroRef)
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding-top: 64px;
-  overflow: hidden;
+  padding: 64px 0 var(--space-5);
+  overflow-x: clip;
 }
 
 .hero__grain {
@@ -87,6 +86,7 @@ useHeroEntrance(heroRef)
 .hero__inner {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .hero__eyebrow {
@@ -132,9 +132,6 @@ useHeroEntrance(heroRef)
 
 .hero__tagline span {
   color: var(--fg);
-  background: linear-gradient(120deg, var(--fg) 0%, var(--fg-dim) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
 }
 
 .hero__sub {
@@ -178,11 +175,14 @@ useHeroEntrance(heroRef)
   display: flex;
   gap: var(--space-2);
   flex-wrap: wrap;
+  padding-bottom: var(--space-1);
 }
 
 .hero__cta {
   position: relative;
-  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-family: var(--font-mono);
   font-size: 0.78rem;
   letter-spacing: 0.08em;
@@ -193,6 +193,13 @@ useHeroEntrance(heroRef)
   color: var(--bg);
   box-shadow: var(--shadow-soft);
   transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.hero__cta-label {
+  position: relative;
+  z-index: 1;
 }
 
 .hero__cta:hover {
@@ -214,42 +221,32 @@ useHeroEntrance(heroRef)
   background: rgba(19, 19, 21, 0.85);
 }
 
-.hero__scroll {
-  position: absolute;
-  bottom: var(--space-3);
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.hero__scroll-line {
-  width: 1px;
-  height: 36px;
-  background: linear-gradient(to bottom, var(--fg-dim), transparent);
-  animation: scrollPulse 2.2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { opacity: 0.3; transform: scaleY(0.85); }
-  50% { opacity: 1; transform: scaleY(1); }
-}
-
 @keyframes heroShine {
   0%, 100% { opacity: 0; transform: rotate(-8deg) translateX(-10%); }
   45% { opacity: 0.6; transform: rotate(-8deg) translateX(120%); }
 }
 
 @media (max-width: 640px) {
-  .hero__scroll { display: none; }
-  .hero__tagline { max-width: none; }
+  .hero {
+    padding-bottom: var(--space-4);
+  }
+
+  .hero__tagline {
+    max-width: none;
+  }
+
+  .hero__actions {
+    width: 100%;
+  }
+
+  .hero__cta {
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero__shine,
-  .hero__scroll-line {
+  .hero__shine {
     animation: none;
   }
 }
