@@ -5,6 +5,15 @@ export interface SkillCategory {
   items: string[]
 }
 
+export interface ExperienceEntry {
+  id: string
+  org: string
+  role: string
+  period: string
+  summary: string
+  highlights: string[]
+}
+
 export interface LogEntry {
   id: string
   code: string // e.g. "LOG-01"

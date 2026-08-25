@@ -72,5 +72,6 @@ onMounted(() => {
   stroke-width: 1.4;
   stroke-linecap: round;
   stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(245, 244, 241, 0.25));
 }
 </style>

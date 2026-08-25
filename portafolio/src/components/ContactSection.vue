@@ -4,12 +4,12 @@
       <p class="eyebrow" data-reveal>TRANSMISIÓN · 03</p>
       <h2 class="contact__title" data-reveal>Abrir canal</h2>
       <p class="contact__sub" data-reveal>
-        Si esto te trajo hasta aquí — un jurado, un equipo, una idea —
-        este es el canal directo. Respondo yo, sin intermediarios.
+        ¿Tienes una vacante, un proyecto o una idea? Escríbeme — leo cada mensaje
+        y respondo yo, sin intermediarios.
       </p>
 
       <div class="contact__grid">
-        <form class="contact__form" data-reveal @submit.prevent="handleSubmit">
+        <form class="contact__form" data-reveal="scale" @submit.prevent="handleSubmit">
           <label class="field">
             <span>Nombre</span>
             <input
@@ -58,7 +58,7 @@
           </p>
         </form>
 
-        <aside class="contact__side" data-reveal>
+        <aside class="contact__side" data-reveal="left">
           <p class="contact__side-label eyebrow">Canales directos</p>
           <a :href="contactLinks.github" target="_blank" rel="noopener" class="contact__link">
             GitHub
@@ -127,11 +127,18 @@ async function handleSubmit() {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  background: var(--bg-card);
+  background: rgba(19, 19, 21, 0.85);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: var(--space-4);
   box-shadow: var(--shadow-soft), var(--shadow-inset);
+  backdrop-filter: blur(10px);
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.contact__form:focus-within {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-lift), 0 0 0 1px rgba(245, 244, 241, 0.06);
 }
 
 .field {
@@ -157,12 +164,14 @@ async function handleSubmit() {
   border-radius: 8px;
   padding: 0.75rem 0.9rem;
   resize: vertical;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
 }
 
 .field input:focus,
 .field textarea:focus {
   border-color: var(--line-strong);
+  box-shadow: 0 0 0 3px rgba(245, 244, 241, 0.06);
+  transform: translateY(-1px);
 }
 
 .contact__submit {
@@ -177,11 +186,12 @@ async function handleSubmit() {
   background: var(--fg);
   color: var(--bg);
   box-shadow: var(--shadow-soft);
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.34, 1.4, 0.64, 1), opacity 0.25s ease, box-shadow 0.3s ease;
 }
 
 .contact__submit:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: var(--shadow-lift);
 }
 
 .contact__submit:disabled {
@@ -220,12 +230,13 @@ async function handleSubmit() {
   border-bottom: 1px solid var(--line);
   padding-bottom: 0.4rem;
   width: fit-content;
-  transition: color 0.2s ease, border-color 0.2s ease;
+  transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
 
 .contact__link:hover {
   color: var(--fg);
   border-color: var(--fg);
+  transform: translateX(4px);
 }
 
 @media (max-width: 800px) {

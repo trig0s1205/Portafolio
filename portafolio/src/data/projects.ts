@@ -1,33 +1,33 @@
 import type { LogEntry } from '@/types'
 
-// Reemplaza title / summary / stack / href cuando tengas los proyectos reales.
-// El "code" (LOG-01, LOG-02...) funciona como número de bitácora, no como prioridad.
 export const logEntries: LogEntry[] = [
   {
-    id: 'luxury-brand',
+    id: 'luxtimee',
     code: 'LOG-01',
-    title: 'Proyecto Luxury Brand',
+    title: 'Luxtimee',
     summary:
-      'E-commerce de relojería de lujo de punta a punta: vitrina, checkout y un panel de control para gestionar catálogo y registro VIP de propietarios.',
-    stack: ['Vue', 'TypeScript', 'Vite', 'PostgreSQL'],
+      'E-commerce de relojería de lujo construido como monorepo de punta a punta: vitrina premium, checkout, panel administrativo, registro VIP de propietarios y servicio de imágenes dedicado. Diseñado para sentirse exclusivo y funcionar rápido bajo carga real.',
+    stack: ['Vue 3', 'TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'pnpm', 'Docker'],
+    href: 'https://github.com/trig0s1205/Luxtimee',
     status: 'building'
   },
   {
-    id: 'auth-system',
+    id: 'cashsolution',
     code: 'LOG-02',
-    title: 'Proyecto Auth System',
+    title: 'CashSolution',
     summary:
-      'Sistema de autenticación construido sobre NestJS con cobertura de pruebas de seguridad automatizadas usando Playwright.',
-    stack: ['NestJS', 'TypeScript', 'Playwright', 'Redis'],
-    status: 'building'
+      'Sitio corporativo para firma de gestión financiera y contable en Colombia: landing de alto impacto, secciones de servicios, formulario de contacto funcional, integración con WhatsApp y animaciones de scroll pensadas para convertir visitantes en clientes.',
+    stack: ['HTML5', 'CSS3', 'JavaScript', 'Web3Forms', 'Cloudinary', 'Responsive UI'],
+    href: 'https://www.cashsolution.com.co/',
+    status: 'live'
   },
   {
-    id: 'legal-tech',
+    id: 'foscal-tools',
     code: 'LOG-03',
-    title: 'Proyecto Legal-Tech',
+    title: 'Herramientas digitales · FOSCAL',
     summary:
-      'Herramienta para organizar expedientes judiciales: estructura archivos, detecta inconsistencias y entrega un documento listo para presentar.',
-    stack: ['Python', 'PDF Processing', 'Clean Architecture'],
+      'Sistemas internos para operación hospitalaria y salud de alta complejidad: flujos clínicos-administrativos, seguimiento operativo y herramientas que traducen datos en decisiones en tiempo real.',
+    stack: ['TypeScript', '.NET', 'Vue.js', 'SQL Server', 'Agentes IA', 'REST APIs'],
     status: 'classified'
   }
 ]

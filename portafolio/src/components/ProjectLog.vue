@@ -4,15 +4,16 @@
       <p class="eyebrow" data-reveal>BITÁCORA · 02</p>
       <h2 class="log__title" data-reveal>Registro de operaciones</h2>
       <p class="log__sub" data-reveal>
-        Entradas activas. Cada una con su propio stack, su propio motivo.
+        Productos reales, stacks reales. Desde e-commerce de lujo hasta impacto social en salud.
       </p>
 
-      <div class="log__list">
+      <div class="log__list" data-reveal-group>
         <article
           v-for="entry in logEntries"
           :key="entry.id"
           class="log-entry"
           data-reveal
+          data-tilt
         >
           <div class="log-entry__meta">
             <span class="log-entry__code">{{ entry.code }}</span>
@@ -41,10 +42,12 @@
 import { ref } from 'vue'
 import { logEntries } from '@/data/projects'
 import { useScrollReveal } from '@/composables/useScrollReveal'
+import { useCardTilt } from '@/composables/useCardTilt'
 import type { LogEntry } from '@/types'
 
 const rootRef = ref<HTMLElement | null>(null)
 useScrollReveal(rootRef)
+useCardTilt(rootRef)
 
 function statusLabel(status: LogEntry['status']) {
   return { live: 'En vivo', building: 'En construcción', classified: 'Privado' }[status]
@@ -75,12 +78,30 @@ function statusLabel(status: LogEntry['status']) {
   border-radius: var(--radius);
   padding: var(--space-3) var(--space-4);
   box-shadow: var(--shadow-soft), var(--shadow-inset);
-  transition: border-color 0.25s ease, transform 0.25s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.log-entry::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(245, 244, 241, 0.04), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
 }
 
 .log-entry:hover {
   border-color: var(--line-strong);
-  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift), var(--shadow-inset);
+}
+
+.log-entry:hover::before {
+  opacity: 1;
 }
 
 .log-entry__meta {

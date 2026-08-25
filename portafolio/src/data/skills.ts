@@ -1,6 +1,5 @@
 import type { SkillCategory } from '@/types'
 
-// Edita libremente estas listas para mantenerlas sincronizadas con tu README.
 export const skillCategories: SkillCategory[] = [
   {
     id: 'frontend',
@@ -8,37 +7,50 @@ export const skillCategories: SkillCategory[] = [
     label: 'Frontend',
     items: [
       'HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Vue.js', 'Next.js',
-      'Vite', 'Blazor WASM', 'Blazor Server', 'ASP.NET Core MVC', 'Razor Pages'
+      'Vite', 'GSAP', 'Pinia', 'Blazor WASM', 'Blazor Server',
+      'ASP.NET Core MVC', 'Razor Pages', 'Responsive Design'
     ]
   },
   {
     id: 'backend',
     code: 'BE',
     label: 'Backend',
-    items: ['Python', 'Node.js', 'PHP', 'TypeScript', 'C#', '.NET', 'NestJS']
+    items: [
+      'Python', 'Node.js', 'NestJS', 'Express', 'PHP',
+      'TypeScript', 'C#', '.NET', 'REST APIs', 'Prisma ORM'
+    ]
   },
   {
     id: 'data',
     code: 'DB',
     label: 'Bases de datos',
-    items: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'Redis', 'Prisma ORM']
+    items: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'Redis', 'Prisma']
   },
   {
     id: 'ai',
     code: 'AI',
-    label: 'IA / LLMs',
-    items: ['LangGraph', 'LM Studio', 'OpenRouter', 'Modelos open-source y de pago']
+    label: 'IA / Agentes',
+    items: [
+      'Cursor Agents', 'LangGraph', 'LM Studio', 'OpenRouter',
+      'Prompt Engineering', 'MCP', 'RAG', 'Automatización con LLMs'
+    ]
   },
   {
     id: 'arch',
     code: 'AR',
     label: 'Arquitectura',
-    items: ['Arquitectura Hexagonal', 'Clean Architecture', 'REST APIs']
+    items: [
+      'Arquitectura Hexagonal', 'Clean Architecture',
+      'Monorepos', 'Microservicios', 'Domain-Driven Design'
+    ]
   },
   {
     id: 'tools',
     code: 'OP',
-    label: 'Herramientas',
-    items: ['Vercel', 'Playwright', 'Figma', 'Stitch', 'Git']
+    label: 'DevOps & Herramientas',
+    items: [
+      'Git', 'Docker', 'pnpm', 'Vercel', 'Playwright',
+      'Figma', 'EmailJS', 'Web3Forms', 'Cloudinary'
+    ]
   }
 ]

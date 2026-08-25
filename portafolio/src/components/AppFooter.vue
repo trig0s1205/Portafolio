@@ -1,14 +1,19 @@
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import PulseLine from './PulseLine.vue'
+import { useScrollReveal } from '@/composables/useScrollReveal'
+
+const rootRef = ref<HTMLElement | null>(null)
+useScrollReveal(rootRef)
 </script>
 
 
 <template>
-  <footer class="footer">
+  <footer class="footer" ref="rootRef">
     <div class="container footer__inner">
-      <PulseLine compact />
-      <div class="footer__row">
+      <PulseLine compact data-reveal />
+      <div class="footer__row" data-reveal>
         <span class="footer__id">TRG1205</span>
         <span class="footer__note">Construido en silencio · 2026</span>
       </div>
@@ -20,6 +25,18 @@ import PulseLine from './PulseLine.vue'
 .footer {
   border-top: 1px solid var(--line);
   padding: var(--space-4) 0 var(--space-5);
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(480px, 60%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 244, 241, 0.2), transparent);
 }
 
 .footer__row {
@@ -35,6 +52,11 @@ import PulseLine from './PulseLine.vue'
 
 .footer__id {
   color: var(--fg-dim);
+  transition: color 0.25s ease;
+}
+
+.footer__id:hover {
+  color: var(--fg);
 }
 
 @media (max-width: 560px) {

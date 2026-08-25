@@ -129,6 +129,23 @@ button {
 
 .section {
   padding: var(--space-6) 0;
+  position: relative;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(720px, 90%);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line-strong), transparent);
+  opacity: 0.6;
+}
+
+.section:last-of-type::after {
+  display: none;
 }
 
 @media (max-width: 720px) {
@@ -146,6 +163,30 @@ button {
 
 [data-reveal].is-revealed {
   opacity: 1;
+}
+
+.btn-shine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-18deg);
+  animation: btnShine 4.5s ease-in-out infinite;
+}
+
+@keyframes btnShine {
+  0%, 75%, 100% { left: -120%; }
+  40% { left: 140%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-shine::after {
+    animation: none;
+    display: none;
+  }
 }
 
 .sr-only {
