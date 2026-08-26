@@ -8,7 +8,7 @@ export const logEntries: LogEntry[] = [
     summary:
       'E-commerce de relojería de lujo construido como monorepo de punta a punta: vitrina premium, checkout, panel administrativo, registro VIP de propietarios y servicio de imágenes dedicado. Diseñado para sentirse exclusivo y funcionar rápido bajo carga real.',
     stack: ['Vue 3', 'TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'pnpm', 'Docker'],
-    href: 'https://github.com/trig0s1205/Luxtimee',
+    href: 'https://luxtimee.com',
     status: 'building'
   },
   {
