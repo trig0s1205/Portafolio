@@ -14,8 +14,8 @@ useScrollReveal(rootRef)
     <div class="container footer__inner">
       <PulseLine compact data-reveal />
       <div class="footer__row" data-reveal>
-        <span class="footer__id">TRG1205</span>
-        <span class="footer__note">Construido en silencio · 2026</span>
+        <span class="footer__id">Daniel Felipe Trigos Sarmiento</span>
+        <span class="footer__note">Floridablanca · Full Stack · 2026</span>
       </div>
     </div>
   </footer>

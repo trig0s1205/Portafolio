@@ -4,32 +4,32 @@
     <div class="hero__shine" aria-hidden="true" />
 
     <div class="container hero__inner">
-      <p class="eyebrow hero__eyebrow" data-hero="eyebrow">DESARROLLADOR FULL-STACK</p>
+      <p class="eyebrow hero__eyebrow" data-hero="eyebrow">FULL STACK · FLORIDABLANCA, COLOMBIA</p>
 
       <h1 class="hero__id" data-hero="title">
         TRG<span class="hero__id-accent">1205</span>
       </h1>
 
-      <p class="hero__name" data-hero="name">Daniel Trigos</p>
+      <p class="hero__name" data-hero="name">Daniel Felipe Trigos Sarmiento</p>
 
       <div data-hero="pulse">
         <PulseLine />
       </div>
 
       <p class="hero__tagline" data-hero="line">
-        Construyo software que <span>llega a producción</span> y resuelve problemas reales.
+        Aplicaciones estables, <span>de la arquitectura a producción</span>.
       </p>
 
       <p class="hero__sub" data-hero="line">
-        En FOSCAL desarrollo herramientas en un entorno de salud de alta complejidad. Por mi cuenta,
-        lanzo productos como Luxtimee y CashSolution. Domino el stack completo —
-        y cada vez más, agentes de IA que aceleran cómo trabajo.
+        Desarrollador full stack. En FOSCAL construí módulos internos para una institución de salud.
+        Después llevé a producción Luxtimee y CashSolution: backend, interfaz, datos y el proceso de negocio
+        que el software tenía que simplificar.
       </p>
 
       <ul class="hero__highlights" aria-label="Enfoque principal">
-        <li data-hero="pill">FOSCAL · Salud hospitalaria</li>
-        <li data-hero="pill">Agentes IA & automatización</li>
-        <li data-hero="pill">Vue · .NET · Node · Python</li>
+        <li data-hero="pill">Clean Architecture</li>
+        <li data-hero="pill">.NET · NestJS · Nuxt</li>
+        <li data-hero="pill">PostgreSQL · SQL Server</li>
       </ul>
 
       <div class="hero__actions">
@@ -126,7 +126,7 @@ useHeroEntrance(heroRef)
   font-weight: 600;
   font-size: clamp(1.35rem, 3.2vw, 2.15rem);
   color: var(--fg-dim);
-  max-width: 22ch;
+  max-width: 28ch;
   line-height: 1.15;
 }
 

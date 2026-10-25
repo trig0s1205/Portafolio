@@ -1,27 +1,23 @@
 <template>
   <section id="manifest" class="manifest section" ref="rootRef">
     <div class="container">
-      <p class="eyebrow" data-reveal>MANIFEST · 01</p>
-      <h2 class="manifest__title" data-reveal>Quién opera la cuenta</h2>
+      <p class="eyebrow" data-reveal>PERFIL · 01</p>
+      <h2 class="manifest__title" data-reveal>Cómo trabajo</h2>
 
       <p class="manifest__bio" data-reveal>
-        Soy desarrollador full-stack con el pie en producción: en
-        <strong>FOSCAL</strong> construyo soluciones digitales en un entorno hospitalario
-        de alta complejidad en Colombia. Fuera del trabajo, llevo mis propios productos
-        al mercado — desde un e-commerce de lujo hasta sitios corporativos que convierten
-        visitas en clientes.
+        {{ profile.summary }} El foco está en sistemas que alguien usa de verdad:
+        un pedido que llega a cocina, una incapacidad que deja de tramitarse en papel,
+        una factura que avisa antes de vencer.
       </p>
 
       <p class="manifest__bio" data-reveal>
-        Trabajo con agentes de IA integrados en mi flujo diario: automatizo tareas,
-        acelero desarrollo y diseño soluciones más inteligentes sin perder calidad
-        de código. Me obsesiona la arquitectura limpia, el detalle en la UI y entregar
-        cosas que la gente realmente use. Aprendo todos los días. No me rindo fácil.
-        Prefiero entender el problema a fondo antes que poner un parche encima.
+        Baso en Floridablanca. He trabajado en institución de salud, en contrato freelance
+        y en producto propio. En cada caso el ciclo es el mismo: entender el proceso,
+        modelar los datos, construir la interfaz y dejarlo en un entorno que se pueda mantener.
       </p>
 
-      <div class="manifest__experience">
-        <p class="manifest__section-label eyebrow" data-reveal>EXPERIENCIA · CAMPO</p>
+      <div id="trayectoria" class="manifest__experience">
+        <p class="manifest__section-label eyebrow" data-reveal>TRAYECTORIA · 02</p>
 
         <article
           v-for="exp in experienceEntries"
@@ -45,7 +41,7 @@
         </article>
       </div>
 
-      <p class="manifest__section-label eyebrow manifest__skills-label" data-reveal>STACK · OPERATIVO</p>
+      <p class="manifest__section-label eyebrow manifest__skills-label" data-reveal>STACK</p>
 
       <div class="manifest__grid" data-reveal-group>
         <article
@@ -72,6 +68,7 @@
 import { ref } from 'vue'
 import { skillCategories } from '@/data/skills'
 import { experienceEntries } from '@/data/experience'
+import { profile } from '@/data/profile'
 import { useScrollReveal } from '@/composables/useScrollReveal'
 import { useCardTilt } from '@/composables/useCardTilt'
 

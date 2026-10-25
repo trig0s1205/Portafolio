@@ -19,8 +19,11 @@ export interface LogEntry {
   code: string // e.g. "LOG-01"
   title: string
   summary: string
+  highlights: string[]
   stack: string[]
   href?: string
+  period?: string
+  context?: string
   status: 'live' | 'building' | 'classified'
 }
 

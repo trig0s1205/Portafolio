@@ -33,8 +33,9 @@ const navRef = ref<HTMLElement | null>(null)
 let navTriggers: ScrollTrigger[] = []
 
 const links = [
-  { id: 'manifest', href: '#manifest', label: 'Manifest' },
-  { id: 'log', href: '#log', label: 'Log' },
+  { id: 'manifest', href: '#manifest', label: 'Perfil' },
+  { id: 'trayectoria', href: '#trayectoria', label: 'Trayectoria' },
+  { id: 'log', href: '#log', label: 'Proyectos' },
   { id: 'transmission', href: '#transmission', label: 'Contacto' }
 ]
 

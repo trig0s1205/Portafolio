@@ -2,55 +2,33 @@ import type { SkillCategory } from '@/types'
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'frontend',
-    code: 'FE',
-    label: 'Frontend',
-    items: [
-      'HTML5', 'CSS3', 'TypeScript', 'JavaScript', 'Vue.js', 'Next.js',
-      'Vite', 'GSAP', 'Pinia', 'Blazor WASM', 'Blazor Server',
-      'ASP.NET Core MVC', 'Razor Pages', 'Responsive Design'
-    ]
-  },
-  {
     id: 'backend',
     code: 'BE',
     label: 'Backend',
-    items: [
-      'Python', 'Node.js', 'NestJS', 'Express', 'PHP',
-      'TypeScript', 'C#', '.NET', 'REST APIs', 'Prisma ORM'
-    ]
+    items: ['.NET Core', 'C#', 'Node.js', 'NestJS', 'Fastify', 'Python']
+  },
+  {
+    id: 'frontend',
+    code: 'FE',
+    label: 'Frontend',
+    items: ['React', 'Next.js', 'Vue.js', 'Nuxt 3', 'Angular', 'TypeScript', 'Tailwind CSS']
   },
   {
     id: 'data',
     code: 'DB',
-    label: 'Bases de datos',
-    items: ['PostgreSQL', 'MySQL', 'SQL Server', 'MongoDB', 'Redis', 'Prisma']
-  },
-  {
-    id: 'ai',
-    code: 'AI',
-    label: 'IA / Agentes',
-    items: [
-      'Cursor Agents', 'LangGraph', 'LM Studio', 'OpenRouter',
-      'Prompt Engineering', 'MCP', 'RAG', 'Automatización con LLMs'
-    ]
+    label: 'Datos',
+    items: ['PostgreSQL', 'SQL Server', 'SQL', 'Modelado relacional']
   },
   {
     id: 'arch',
     code: 'AR',
     label: 'Arquitectura',
-    items: [
-      'Arquitectura Hexagonal', 'Clean Architecture',
-      'Monorepos', 'Microservicios', 'Domain-Driven Design'
-    ]
+    items: ['Clean Architecture', 'APIs externas', 'Meta API', 'WhatsApp Business']
   },
   {
     id: 'tools',
     code: 'OP',
-    label: 'DevOps & Herramientas',
-    items: [
-      'Git', 'Docker', 'pnpm', 'Vercel', 'Playwright',
-      'Figma', 'EmailJS', 'Web3Forms', 'Cloudinary'
-    ]
+    label: 'Entrega',
+    items: ['Git', 'Google Cloud', 'Vercel', 'npm', 'Despliegue en la nube']
   }
 ]

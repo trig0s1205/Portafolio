@@ -1,10 +1,11 @@
 <template>
   <section id="log" class="log section" ref="rootRef">
     <div class="container">
-      <p class="eyebrow" data-reveal>BITÁCORA · 02</p>
-      <h2 class="log__title" data-reveal>Registro de operaciones</h2>
+      <p class="eyebrow" data-reveal>PROYECTOS · 03</p>
+      <h2 class="log__title" data-reveal>Trabajo que se puede abrir</h2>
       <p class="log__sub" data-reveal>
-        Productos reales, stacks reales. Desde e-commerce de lujo hasta impacto social en salud.
+        Contratos entregados y productos en curso. Cada uno con el problema que resuelve,
+        no solo con la lista de tecnologías.
       </p>
 
       <div class="log__list" data-reveal-group>
@@ -22,8 +23,15 @@
             </span>
           </div>
 
+          <p v-if="entry.context || entry.period" class="log-entry__context">
+            <span v-if="entry.context">{{ entry.context }}</span>
+            <span v-if="entry.period"> · {{ entry.period }}</span>
+          </p>
           <h3 class="log-entry__title">{{ entry.title }}</h3>
           <p class="log-entry__summary">{{ entry.summary }}</p>
+          <ul class="log-entry__highlights">
+            <li v-for="item in entry.highlights" :key="item">{{ item }}</li>
+          </ul>
 
           <ul class="log-entry__stack">
             <li v-for="tech in entry.stack" :key="tech">{{ tech }}</li>
@@ -141,10 +149,43 @@ function statusLabel(status: LogEntry['status']) {
   margin-bottom: var(--space-1);
 }
 
+.log-entry__context {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 0.35rem;
+}
+
 .log-entry__summary {
   color: var(--fg-dim);
-  max-width: 60ch;
+  max-width: 68ch;
   margin-bottom: var(--space-2);
+  line-height: 1.6;
+}
+
+.log-entry__highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-bottom: var(--space-2);
+}
+
+.log-entry__highlights li {
+  position: relative;
+  padding-left: 1.05rem;
+  color: var(--fg-dim);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.log-entry__highlights li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  font-family: var(--font-mono);
+  color: var(--muted);
 }
 
 .log-entry__stack {

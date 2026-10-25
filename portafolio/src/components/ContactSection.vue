@@ -1,11 +1,11 @@
 <template>
   <section id="transmission" class="contact section" ref="rootRef">
     <div class="container">
-      <p class="eyebrow" data-reveal>TRANSMISIÓN · 03</p>
-      <h2 class="contact__title" data-reveal>Abrir canal</h2>
+      <p class="eyebrow" data-reveal>CONTACTO · 04</p>
+      <h2 class="contact__title" data-reveal>Hablemos del siguiente sistema</h2>
       <p class="contact__sub" data-reveal>
-        ¿Tienes una vacante, un proyecto o una idea? Escríbeme — leo cada mensaje
-        y respondo yo, sin intermediarios.
+        Vacante, contrato o producto. Respondo yo, desde Floridablanca.
+        Si prefieres un canal directo, el teléfono y LinkedIn están al lado.
       </p>
 
       <div class="contact__grid">
@@ -69,6 +69,10 @@
           <a :href="`mailto:${contactLinks.email}`" class="contact__link">
             {{ contactLinks.email }}
           </a>
+          <a :href="contactLinks.phoneHref" class="contact__link">
+            {{ contactLinks.phone }}
+          </a>
+          <p class="contact__location">{{ contactLinks.location }}</p>
         </aside>
       </div>
     </div>
@@ -237,6 +241,14 @@ async function handleSubmit() {
   color: var(--fg);
   border-color: var(--fg);
   transform: translateX(4px);
+}
+
+.contact__location {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+  max-width: 22ch;
 }
 
 @media (max-width: 800px) {
